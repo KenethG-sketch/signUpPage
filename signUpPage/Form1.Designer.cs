@@ -29,152 +29,73 @@
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
-			textBox1 = new TextBox();
-			textBox2 = new TextBox();
-			textBox3 = new TextBox();
-			textBox4 = new TextBox();
-			button1 = new Button();
-			comboBox1 = new ComboBox();
-			contextMenuStrip1 = new ContextMenuStrip(components);
-			toolStripMenuItem1 = new ToolStripMenuItem();
-			dateTimePicker1 = new DateTimePicker();
-			label1 = new Label();
-			label2 = new Label();
-			label3 = new Label();
-			label4 = new Label();
+			nameTextBox = new TextBox();
+			registerbutton = new Button();
+			comboBoxSex = new ComboBox();
+			namelabel = new Label();
 			label5 = new Label();
 			label6 = new Label();
-			textBox5 = new TextBox();
-			label7 = new Label();
-			textBox6 = new TextBox();
+			emailTextBox = new TextBox();
 			label8 = new Label();
-			label9 = new Label();
 			label10 = new Label();
-			textBox7 = new TextBox();
-			textBox8 = new TextBox();
-			button2 = new Button();
-			contextMenuStrip1.SuspendLayout();
+			passwordTextBox = new TextBox();
+			errorProvider1 = new ErrorProvider(components);
+			label2 = new Label();
+			checkBoxShowPassword = new CheckBox();
+			dateTimePicker1 = new DateTimePicker();
+			linkloginlabel = new LinkLabel();
+			birthdateTextBox = new TextBox();
+			label3 = new Label();
+			((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
 			SuspendLayout();
 			// 
-			// textBox1
+			// nameTextBox
 			// 
-			textBox1.BackColor = SystemColors.Menu;
-			textBox1.Location = new Point(36, 143);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(219, 31);
-			textBox1.TabIndex = 0;
+			nameTextBox.BackColor = SystemColors.Menu;
+			nameTextBox.Location = new Point(46, 143);
+			nameTextBox.Name = "nameTextBox";
+			nameTextBox.Size = new Size(281, 31);
+			nameTextBox.TabIndex = 0;
 			// 
-			// textBox2
+			// registerbutton
 			// 
-			textBox2.BackColor = SystemColors.Menu;
-			textBox2.Location = new Point(296, 143);
-			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(213, 31);
-			textBox2.TabIndex = 1;
+			registerbutton.BackColor = Color.RosyBrown;
+			registerbutton.Font = new Font("Berlin Sans FB Demi", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+			registerbutton.Location = new Point(373, 351);
+			registerbutton.Margin = new Padding(2);
+			registerbutton.Name = "registerbutton";
+			registerbutton.Size = new Size(139, 43);
+			registerbutton.TabIndex = 4;
+			registerbutton.Text = "Register";
+			registerbutton.UseVisualStyleBackColor = false;
+			registerbutton.Click += registerbutton_Click;
 			// 
-			// textBox3
+			// comboBoxSex
 			// 
-			textBox3.BackColor = SystemColors.Menu;
-			textBox3.Location = new Point(540, 143);
-			textBox3.Name = "textBox3";
-			textBox3.Size = new Size(150, 31);
-			textBox3.TabIndex = 2;
+			comboBoxSex.DisplayMember = "Male ";
+			comboBoxSex.FormattingEnabled = true;
+			comboBoxSex.Items.AddRange(new object[] { "Male", "Female" });
+			comboBoxSex.Location = new Point(389, 232);
+			comboBoxSex.Name = "comboBoxSex";
+			comboBoxSex.Size = new Size(146, 33);
+			comboBoxSex.TabIndex = 8;
+			comboBoxSex.Text = "Please Select";
+			comboBoxSex.ValueMember = "Male ";
 			// 
-			// textBox4
+			// namelabel
 			// 
-			textBox4.BackColor = SystemColors.Menu;
-			textBox4.Location = new Point(736, 143);
-			textBox4.Name = "textBox4";
-			textBox4.Size = new Size(93, 31);
-			textBox4.TabIndex = 3;
-			// 
-			// button1
-			// 
-			button1.BackColor = Color.RosyBrown;
-			button1.Font = new Font("Stencil", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			button1.Location = new Point(579, 436);
-			button1.Name = "button1";
-			button1.Padding = new Padding(10);
-			button1.Size = new Size(203, 62);
-			button1.TabIndex = 4;
-			button1.Text = "SIGN-UP";
-			button1.UseVisualStyleBackColor = false;
-			// 
-			// comboBox1
-			// 
-			comboBox1.ContextMenuStrip = contextMenuStrip1;
-			comboBox1.DisplayMember = "Male ";
-			comboBox1.FormattingEnabled = true;
-			comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-			comboBox1.Location = new Point(708, 247);
-			comboBox1.Name = "comboBox1";
-			comboBox1.Size = new Size(146, 33);
-			comboBox1.TabIndex = 8;
-			comboBox1.Text = "Please Select";
-			comboBox1.ValueMember = "Male ";
-			// 
-			// contextMenuStrip1
-			// 
-			contextMenuStrip1.ImageScalingSize = new Size(24, 24);
-			contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
-			contextMenuStrip1.Name = "contextMenuStrip1";
-			contextMenuStrip1.Size = new Size(185, 36);
-			// 
-			// toolStripMenuItem1
-			// 
-			toolStripMenuItem1.Name = "toolStripMenuItem1";
-			toolStripMenuItem1.Size = new Size(184, 32);
-			toolStripMenuItem1.Text = ".khvjhvjkhvjk";
-			// 
-			// dateTimePicker1
-			// 
-			dateTimePicker1.Location = new Point(22, 449);
-			dateTimePicker1.Margin = new Padding(2);
-			dateTimePicker1.Name = "dateTimePicker1";
-			dateTimePicker1.Size = new Size(287, 31);
-			dateTimePicker1.TabIndex = 9;
-			// 
-			// label1
-			// 
-			label1.AutoSize = true;
-			label1.Location = new Point(46, 115);
-			label1.Name = "label1";
-			label1.Size = new Size(95, 25);
-			label1.TabIndex = 10;
-			label1.Text = "SURNAME";
-			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(306, 115);
-			label2.Name = "label2";
-			label2.Size = new Size(104, 25);
-			label2.TabIndex = 11;
-			label2.Text = "FULL NAME";
-			// 
-			// label3
-			// 
-			label3.AutoSize = true;
-			label3.Location = new Point(540, 116);
-			label3.Name = "label3";
-			label3.Size = new Size(131, 25);
-			label3.TabIndex = 12;
-			label3.Text = "MIDDLE NAME";
-			// 
-			// label4
-			// 
-			label4.AutoSize = true;
-			label4.Location = new Point(736, 115);
-			label4.Name = "label4";
-			label4.Size = new Size(68, 25);
-			label4.TabIndex = 13;
-			label4.Text = "SUFFIX";
+			namelabel.AutoSize = true;
+			namelabel.Location = new Point(46, 115);
+			namelabel.Name = "namelabel";
+			namelabel.Size = new Size(91, 25);
+			namelabel.TabIndex = 10;
+			namelabel.Text = "Full Name";
 			// 
 			// label5
 			// 
 			label5.AutoSize = true;
 			label5.Font = new Font("Showcard Gothic", 24F, FontStyle.Italic, GraphicsUnit.Point, 0);
-			label5.Location = new Point(236, 10);
+			label5.Location = new Point(46, 10);
 			label5.Name = "label5";
 			label5.Size = new Size(503, 60);
 			label5.TabIndex = 14;
@@ -184,154 +105,159 @@
 			// label6
 			// 
 			label6.AutoSize = true;
-			label6.Location = new Point(46, 221);
+			label6.Location = new Point(46, 204);
 			label6.Name = "label6";
-			label6.Size = new Size(145, 25);
+			label6.Size = new Size(124, 25);
 			label6.TabIndex = 15;
-			label6.Text = "EMAIL ADDRESS";
+			label6.Text = "Email Address";
 			// 
-			// textBox5
+			// emailTextBox
 			// 
-			textBox5.BackColor = SystemColors.Menu;
-			textBox5.Location = new Point(36, 249);
-			textBox5.Name = "textBox5";
-			textBox5.PlaceholderText = "keneth@gmail.com";
-			textBox5.Size = new Size(239, 31);
-			textBox5.TabIndex = 16;
-			// 
-			// label7
-			// 
-			label7.AutoSize = true;
-			label7.Location = new Point(347, 221);
-			label7.Name = "label7";
-			label7.Size = new Size(187, 25);
-			label7.TabIndex = 17;
-			label7.Text = "PERSONAL ADDRESS ";
-			// 
-			// textBox6
-			// 
-			textBox6.BackColor = SystemColors.Menu;
-			textBox6.Location = new Point(338, 249);
-			textBox6.Name = "textBox6";
-			textBox6.Size = new Size(324, 31);
-			textBox6.TabIndex = 18;
+			emailTextBox.BackColor = SystemColors.Menu;
+			emailTextBox.Location = new Point(46, 232);
+			emailTextBox.Name = "emailTextBox";
+			emailTextBox.PlaceholderText = "keneth@gmail.com";
+			emailTextBox.Size = new Size(239, 31);
+			emailTextBox.TabIndex = 16;
+			emailTextBox.Validating += emailTextBox_Validating;
 			// 
 			// label8
 			// 
 			label8.AutoSize = true;
-			label8.Location = new Point(718, 220);
+			label8.Location = new Point(389, 204);
 			label8.Name = "label8";
-			label8.Size = new Size(42, 25);
+			label8.Size = new Size(39, 25);
 			label8.TabIndex = 19;
-			label8.Text = "SEX";
-			// 
-			// label9
-			// 
-			label9.AutoSize = true;
-			label9.Location = new Point(46, 343);
-			label9.Name = "label9";
-			label9.Size = new Size(104, 25);
-			label9.TabIndex = 20;
-			label9.Text = "USERNAME";
+			label8.Text = "Sex";
 			// 
 			// label10
 			// 
 			label10.AutoSize = true;
-			label10.Location = new Point(401, 343);
+			label10.Location = new Point(46, 286);
 			label10.Name = "label10";
-			label10.Size = new Size(108, 25);
+			label10.Size = new Size(132, 25);
 			label10.TabIndex = 21;
-			label10.Text = "PASSWORD";
+			label10.Text = "Enter Password";
 			// 
-			// textBox7
+			// passwordTextBox
 			// 
-			textBox7.BackColor = SystemColors.Menu;
-			textBox7.Location = new Point(36, 371);
-			textBox7.Name = "textBox7";
-			textBox7.Size = new Size(273, 31);
-			textBox7.TabIndex = 23;
+			passwordTextBox.BackColor = SystemColors.Menu;
+			passwordTextBox.Location = new Point(46, 314);
+			passwordTextBox.Name = "passwordTextBox";
+			passwordTextBox.PasswordChar = '*';
+			passwordTextBox.Size = new Size(239, 31);
+			passwordTextBox.TabIndex = 24;
+			passwordTextBox.Validating += passwordTextBox_Validating;
 			// 
-			// textBox8
+			// errorProvider1
 			// 
-			textBox8.BackColor = SystemColors.Menu;
-			textBox8.Location = new Point(389, 371);
-			textBox8.Name = "textBox8";
-			textBox8.Size = new Size(273, 31);
-			textBox8.TabIndex = 24;
+			errorProvider1.ContainerControl = this;
 			// 
-			// button2
+			// label2
 			// 
-			button2.BackColor = Color.RosyBrown;
-			button2.Font = new Font("Stencil", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			button2.Location = new Point(788, 436);
-			button2.Name = "button2";
-			button2.Padding = new Padding(10);
-			button2.Size = new Size(144, 62);
-			button2.TabIndex = 25;
-			button2.Text = "LOG-IN";
-			button2.UseVisualStyleBackColor = false;
+			label2.AutoSize = true;
+			label2.Location = new Point(389, 115);
+			label2.Name = "label2";
+			label2.Size = new Size(112, 25);
+			label2.TabIndex = 27;
+			label2.Text = "Date of Birth";
+			// 
+			// checkBoxShowPassword
+			// 
+			checkBoxShowPassword.AutoSize = true;
+			checkBoxShowPassword.Location = new Point(164, 351);
+			checkBoxShowPassword.Name = "checkBoxShowPassword";
+			checkBoxShowPassword.Size = new Size(146, 31);
+			checkBoxShowPassword.TabIndex = 29;
+			checkBoxShowPassword.Text = "Show Passord";
+			checkBoxShowPassword.UseCompatibleTextRendering = true;
+			checkBoxShowPassword.UseVisualStyleBackColor = true;
+			checkBoxShowPassword.CheckedChanged += checkBoxShowPassword_CheckedChanged;
+			checkBoxShowPassword.TextChanged += checkBoxShowPassword_CheckedChanged;
+			// 
+			// dateTimePicker1
+			// 
+			dateTimePicker1.Location = new Point(518, 143);
+			dateTimePicker1.Name = "dateTimePicker1";
+			dateTimePicker1.Size = new Size(31, 31);
+			dateTimePicker1.TabIndex = 30;
+			dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+			// 
+			// linkloginlabel
+			// 
+			linkloginlabel.AutoSize = true;
+			linkloginlabel.Location = new Point(518, 369);
+			linkloginlabel.Name = "linkloginlabel";
+			linkloginlabel.Size = new Size(63, 25);
+			linkloginlabel.TabIndex = 31;
+			linkloginlabel.TabStop = true;
+			linkloginlabel.Text = "Log-in";
+			// 
+			// birthdateTextBox
+			// 
+			birthdateTextBox.Location = new Point(387, 143);
+			birthdateTextBox.Name = "birthdateTextBox";
+			birthdateTextBox.PlaceholderText = "dd/mm/yy";
+			birthdateTextBox.Size = new Size(125, 31);
+			birthdateTextBox.TabIndex = 32;
+			// 
+			// label3
+			// 
+			label3.AutoSize = true;
+			label3.Location = new Point(389, 286);
+			label3.Name = "label3";
+			label3.Size = new Size(0, 25);
+			label3.TabIndex = 33;
 			// 
 			// signupPage
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.Info;
-			ClientSize = new Size(974, 523);
-			Controls.Add(button2);
-			Controls.Add(textBox8);
-			Controls.Add(textBox7);
+			ClientSize = new Size(614, 453);
+			Controls.Add(label3);
+			Controls.Add(birthdateTextBox);
+			Controls.Add(linkloginlabel);
+			Controls.Add(dateTimePicker1);
+			Controls.Add(checkBoxShowPassword);
+			Controls.Add(label2);
+			Controls.Add(passwordTextBox);
 			Controls.Add(label10);
-			Controls.Add(label9);
 			Controls.Add(label8);
-			Controls.Add(textBox6);
-			Controls.Add(label7);
-			Controls.Add(textBox5);
+			Controls.Add(emailTextBox);
 			Controls.Add(label6);
 			Controls.Add(label5);
-			Controls.Add(label4);
-			Controls.Add(label3);
-			Controls.Add(label2);
-			Controls.Add(label1);
-			Controls.Add(dateTimePicker1);
-			Controls.Add(comboBox1);
-			Controls.Add(button1);
-			Controls.Add(textBox4);
-			Controls.Add(textBox3);
-			Controls.Add(textBox2);
-			Controls.Add(textBox1);
+			Controls.Add(namelabel);
+			Controls.Add(comboBoxSex);
+			Controls.Add(registerbutton);
+			Controls.Add(nameTextBox);
+			MaximizeBox = false;
 			Name = "signupPage";
 			Padding = new Padding(10);
 			Text = "Form1";
-			contextMenuStrip1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
 
 		#endregion
 
-		private TextBox textBox1;
-		private TextBox textBox2;
-		private TextBox textBox3;
-		private TextBox textBox4;
-		private Button button1;
-		private ComboBox comboBox1;
-		private ContextMenuStrip contextMenuStrip1;
-		private ToolStripMenuItem toolStripMenuItem1;
-		private DateTimePicker dateTimePicker1;
-		private Label label1;
-		private Label label2;
-		private Label label3;
-		private Label label4;
+		private TextBox nameTextBox;
+		private Button registerbutton;
+		private ComboBox comboBoxSex;
+		private Label namelabel;
 		private Label label5;
 		private Label label6;
-		private TextBox textBox5;
-		private Label label7;
-		private TextBox textBox6;
+		private TextBox emailTextBox;
 		private Label label8;
-		private Label label9;
 		private Label label10;
-		private TextBox textBox7;
-		private TextBox textBox8;
-		private Button button2;
+		private TextBox passwordTextBox;
+		private ErrorProvider errorProvider1;
+		private Label label2;
+		private CheckBox checkBoxShowPassword;
+		private DateTimePicker dateTimePicker1;
+		private TextBox birthdateTextBox;
+		private LinkLabel linkloginlabel;
+		private Label label3;
 	}
 }
