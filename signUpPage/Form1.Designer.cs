@@ -43,7 +43,7 @@
 			label2 = new Label();
 			checkBoxShowPassword = new CheckBox();
 			dateTimePicker1 = new DateTimePicker();
-			linkloginlabel = new LinkLabel();
+			loginlinkButton = new LinkLabel();
 			birthdateTextBox = new TextBox();
 			label3 = new Label();
 			((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
@@ -183,15 +183,16 @@
 			dateTimePicker1.TabIndex = 30;
 			dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
 			// 
-			// linkloginlabel
+			// loginlinkButton
 			// 
-			linkloginlabel.AutoSize = true;
-			linkloginlabel.Location = new Point(518, 369);
-			linkloginlabel.Name = "linkloginlabel";
-			linkloginlabel.Size = new Size(63, 25);
-			linkloginlabel.TabIndex = 31;
-			linkloginlabel.TabStop = true;
-			linkloginlabel.Text = "Log-in";
+			loginlinkButton.AutoSize = true;
+			loginlinkButton.Location = new Point(518, 369);
+			loginlinkButton.Name = "loginlinkButton";
+			loginlinkButton.Size = new Size(63, 25);
+			loginlinkButton.TabIndex = 31;
+			loginlinkButton.TabStop = true;
+			loginlinkButton.Text = "Log-in";
+			loginlinkButton.LinkClicked += loginlinkButton_LinkClicked;
 			// 
 			// birthdateTextBox
 			// 
@@ -217,7 +218,7 @@
 			ClientSize = new Size(614, 453);
 			Controls.Add(label3);
 			Controls.Add(birthdateTextBox);
-			Controls.Add(linkloginlabel);
+			Controls.Add(loginlinkButton);
 			Controls.Add(dateTimePicker1);
 			Controls.Add(checkBoxShowPassword);
 			Controls.Add(label2);
@@ -257,7 +258,7 @@
 		private CheckBox checkBoxShowPassword;
 		private DateTimePicker dateTimePicker1;
 		private TextBox birthdateTextBox;
-		private LinkLabel linkloginlabel;
+		private LinkLabel loginlinkButton;
 		private Label label3;
 	}
 }

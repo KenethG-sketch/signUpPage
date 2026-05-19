@@ -97,7 +97,7 @@ namespace signUpPage
 			else if (!isValiEmail(emailTextBox.Text))
 			{
 				errorProvider1.SetError(emailTextBox, "Email is in worng format. Fix it.");
-				e.Cancel= true;
+				e.Cancel = true;
 			}
 			else
 			{
@@ -146,6 +146,13 @@ namespace signUpPage
 			birthdateTextBox.Clear();
 			comboBoxSex.SelectedIndex = -1;
 			checkBoxShowPassword.Checked = false;
+		}
+
+		private void loginlinkButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			LogInpage login = new LogInpage();
+			login.Show();
+			this.Hide();
 		}
 	}
 }
