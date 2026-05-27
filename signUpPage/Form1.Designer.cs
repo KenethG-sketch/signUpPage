@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signupPage));
 			nameTextBox = new TextBox();
 			registerbutton = new Button();
 			comboBoxSex = new ComboBox();
@@ -40,18 +41,16 @@
 			label10 = new Label();
 			passwordTextBox = new TextBox();
 			errorProvider1 = new ErrorProvider(components);
-			label2 = new Label();
 			checkBoxShowPassword = new CheckBox();
-			dateTimePicker1 = new DateTimePicker();
 			loginlinkButton = new LinkLabel();
-			birthdateTextBox = new TextBox();
 			label3 = new Label();
+			label1 = new Label();
 			((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
 			SuspendLayout();
 			// 
 			// nameTextBox
 			// 
-			nameTextBox.BackColor = SystemColors.Menu;
+			nameTextBox.BackColor = Color.LightSteelBlue;
 			nameTextBox.Location = new Point(46, 143);
 			nameTextBox.Name = "nameTextBox";
 			nameTextBox.Size = new Size(281, 31);
@@ -59,9 +58,9 @@
 			// 
 			// registerbutton
 			// 
-			registerbutton.BackColor = Color.RosyBrown;
+			registerbutton.BackColor = Color.LightSteelBlue;
 			registerbutton.Font = new Font("Berlin Sans FB Demi", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-			registerbutton.Location = new Point(373, 351);
+			registerbutton.Location = new Point(245, 533);
 			registerbutton.Margin = new Padding(2);
 			registerbutton.Name = "registerbutton";
 			registerbutton.Size = new Size(139, 43);
@@ -72,10 +71,11 @@
 			// 
 			// comboBoxSex
 			// 
+			comboBoxSex.BackColor = Color.LightSteelBlue;
 			comboBoxSex.DisplayMember = "Male ";
 			comboBoxSex.FormattingEnabled = true;
 			comboBoxSex.Items.AddRange(new object[] { "Male", "Female" });
-			comboBoxSex.Location = new Point(389, 232);
+			comboBoxSex.Location = new Point(46, 327);
 			comboBoxSex.Name = "comboBoxSex";
 			comboBoxSex.Size = new Size(146, 33);
 			comboBoxSex.TabIndex = 8;
@@ -85,6 +85,7 @@
 			// namelabel
 			// 
 			namelabel.AutoSize = true;
+			namelabel.BackColor = Color.LightSteelBlue;
 			namelabel.Location = new Point(46, 115);
 			namelabel.Name = "namelabel";
 			namelabel.Size = new Size(91, 25);
@@ -94,17 +95,18 @@
 			// label5
 			// 
 			label5.AutoSize = true;
-			label5.Font = new Font("Showcard Gothic", 24F, FontStyle.Italic, GraphicsUnit.Point, 0);
-			label5.Location = new Point(46, 10);
+			label5.BackColor = Color.LightSteelBlue;
+			label5.Font = new Font("Stencil", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			label5.Location = new Point(13, 22);
 			label5.Name = "label5";
-			label5.Size = new Size(503, 60);
+			label5.Size = new Size(470, 38);
 			label5.TabIndex = 14;
-			label5.Text = "PRO-TRACK SIGN-UP";
-			label5.Click += label5_Click;
+			label5.Text = "Welcome to Pro-Track 2026";
 			// 
 			// label6
 			// 
 			label6.AutoSize = true;
+			label6.BackColor = Color.LightSteelBlue;
 			label6.Location = new Point(46, 204);
 			label6.Name = "label6";
 			label6.Size = new Size(124, 25);
@@ -113,18 +115,19 @@
 			// 
 			// emailTextBox
 			// 
-			emailTextBox.BackColor = SystemColors.Menu;
+			emailTextBox.BackColor = Color.LightSteelBlue;
 			emailTextBox.Location = new Point(46, 232);
 			emailTextBox.Name = "emailTextBox";
 			emailTextBox.PlaceholderText = "keneth@gmail.com";
-			emailTextBox.Size = new Size(239, 31);
+			emailTextBox.Size = new Size(281, 31);
 			emailTextBox.TabIndex = 16;
 			emailTextBox.Validating += emailTextBox_Validating;
 			// 
 			// label8
 			// 
 			label8.AutoSize = true;
-			label8.Location = new Point(389, 204);
+			label8.BackColor = Color.LightSteelBlue;
+			label8.Location = new Point(46, 299);
 			label8.Name = "label8";
 			label8.Size = new Size(39, 25);
 			label8.TabIndex = 19;
@@ -133,7 +136,8 @@
 			// label10
 			// 
 			label10.AutoSize = true;
-			label10.Location = new Point(46, 286);
+			label10.BackColor = Color.LightSteelBlue;
+			label10.Location = new Point(46, 398);
 			label10.Name = "label10";
 			label10.Size = new Size(132, 25);
 			label10.TabIndex = 21;
@@ -141,11 +145,11 @@
 			// 
 			// passwordTextBox
 			// 
-			passwordTextBox.BackColor = SystemColors.Menu;
-			passwordTextBox.Location = new Point(46, 314);
+			passwordTextBox.BackColor = Color.LightSteelBlue;
+			passwordTextBox.Location = new Point(46, 426);
 			passwordTextBox.Name = "passwordTextBox";
 			passwordTextBox.PasswordChar = '*';
-			passwordTextBox.Size = new Size(239, 31);
+			passwordTextBox.Size = new Size(281, 31);
 			passwordTextBox.TabIndex = 24;
 			passwordTextBox.Validating += passwordTextBox_Validating;
 			// 
@@ -153,40 +157,25 @@
 			// 
 			errorProvider1.ContainerControl = this;
 			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(389, 115);
-			label2.Name = "label2";
-			label2.Size = new Size(112, 25);
-			label2.TabIndex = 27;
-			label2.Text = "Date of Birth";
-			// 
 			// checkBoxShowPassword
 			// 
 			checkBoxShowPassword.AutoSize = true;
-			checkBoxShowPassword.Location = new Point(164, 351);
+			checkBoxShowPassword.BackColor = Color.LightSteelBlue;
+			checkBoxShowPassword.Location = new Point(139, 463);
 			checkBoxShowPassword.Name = "checkBoxShowPassword";
 			checkBoxShowPassword.Size = new Size(146, 31);
 			checkBoxShowPassword.TabIndex = 29;
 			checkBoxShowPassword.Text = "Show Passord";
 			checkBoxShowPassword.UseCompatibleTextRendering = true;
-			checkBoxShowPassword.UseVisualStyleBackColor = true;
+			checkBoxShowPassword.UseVisualStyleBackColor = false;
 			checkBoxShowPassword.CheckedChanged += checkBoxShowPassword_CheckedChanged;
 			checkBoxShowPassword.TextChanged += checkBoxShowPassword_CheckedChanged;
-			// 
-			// dateTimePicker1
-			// 
-			dateTimePicker1.Location = new Point(518, 143);
-			dateTimePicker1.Name = "dateTimePicker1";
-			dateTimePicker1.Size = new Size(31, 31);
-			dateTimePicker1.TabIndex = 30;
-			dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
 			// 
 			// loginlinkButton
 			// 
 			loginlinkButton.AutoSize = true;
-			loginlinkButton.Location = new Point(518, 369);
+			loginlinkButton.BackColor = Color.LightSteelBlue;
+			loginlinkButton.Location = new Point(389, 551);
 			loginlinkButton.Name = "loginlinkButton";
 			loginlinkButton.Size = new Size(63, 25);
 			loginlinkButton.TabIndex = 31;
@@ -194,34 +183,38 @@
 			loginlinkButton.Text = "Log-in";
 			loginlinkButton.LinkClicked += loginlinkButton_LinkClicked;
 			// 
-			// birthdateTextBox
-			// 
-			birthdateTextBox.Location = new Point(387, 143);
-			birthdateTextBox.Name = "birthdateTextBox";
-			birthdateTextBox.PlaceholderText = "dd/mm/yy";
-			birthdateTextBox.Size = new Size(125, 31);
-			birthdateTextBox.TabIndex = 32;
-			// 
 			// label3
 			// 
 			label3.AutoSize = true;
+			label3.BackColor = Color.LightSteelBlue;
 			label3.Location = new Point(389, 286);
 			label3.Name = "label3";
 			label3.Size = new Size(0, 25);
 			label3.TabIndex = 33;
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.BackColor = Color.LightSteelBlue;
+			label1.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			label1.Location = new Point(181, 60);
+			label1.Name = "label1";
+			label1.Size = new Size(104, 29);
+			label1.TabIndex = 34;
+			label1.Text = "Sign-up";
 			// 
 			// signupPage
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.Info;
-			ClientSize = new Size(614, 453);
+			BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+			BackgroundImageLayout = ImageLayout.Stretch;
+			ClientSize = new Size(498, 616);
+			Controls.Add(label1);
 			Controls.Add(label3);
-			Controls.Add(birthdateTextBox);
 			Controls.Add(loginlinkButton);
-			Controls.Add(dateTimePicker1);
 			Controls.Add(checkBoxShowPassword);
-			Controls.Add(label2);
 			Controls.Add(passwordTextBox);
 			Controls.Add(label10);
 			Controls.Add(label8);
@@ -254,11 +247,9 @@
 		private Label label10;
 		private TextBox passwordTextBox;
 		private ErrorProvider errorProvider1;
-		private Label label2;
 		private CheckBox checkBoxShowPassword;
-		private DateTimePicker dateTimePicker1;
-		private TextBox birthdateTextBox;
 		private LinkLabel loginlinkButton;
 		private Label label3;
+		private Label label1;
 	}
 }

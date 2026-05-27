@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInpage));
 			linkLabel1 = new LinkLabel();
 			emaillabel = new Label();
 			emailTextBox = new TextBox();
@@ -71,6 +72,7 @@
 			// 
 			passwordTextBox.Location = new Point(87, 299);
 			passwordTextBox.Name = "passwordTextBox";
+			passwordTextBox.PasswordChar = '*';
 			passwordTextBox.Size = new Size(225, 31);
 			passwordTextBox.TabIndex = 5;
 			// 
@@ -85,6 +87,7 @@
 			checkBox1.Text = "Show Password";
 			checkBox1.UseVisualStyleBackColor = true;
 			checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+			checkBox1.TextChanged += checkBox1_CheckedChanged;
 			// 
 			// passwordlabel
 			// 
@@ -120,6 +123,8 @@
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
+			BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+			BackgroundImageLayout = ImageLayout.Stretch;
 			ClientSize = new Size(421, 521);
 			Controls.Add(label1);
 			Controls.Add(loginbutton);

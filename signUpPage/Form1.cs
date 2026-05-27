@@ -17,64 +17,68 @@ namespace signUpPage
 			InitializeComponent();
 		}
 
-		private void label5_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
 		{
-			if (checkBoxShowPassword.Checked)
-			{
-				passwordTextBox.PasswordChar = '\0';
-			}
-			else
-			{
-				passwordTextBox.PasswordChar = '*';
-			}
+			// Toggles password visibility cleanly
+			passwordTextBox.PasswordChar = checkBoxShowPassword.Checked ? '\0' : '*';
 		}
-
 
 		private void registerbutton_Click(object sender, EventArgs e)
 		{
+
+			// 1. Check if GUI validations are blocking the save
 			if (!ValidateChildren())
 			{
-				MessageBox.Show("Please fix validation errors first!");
+				MessageBox.Show("Please fix the red error icons on the form first!", "Validation Blocked", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 
-			string name = nameTextBox.Text;
+			string name = nameTextBox.Text.Trim();
 			string sex = comboBoxSex.Text;
-			string birthdate = dateTimePicker1.Value.ToShortDateString();
-			string email = emailTextBox.Text;
+			string email = emailTextBox.Text.Trim();
 			string password = passwordTextBox.Text;
 
+			// 2. Check if any fields are empty
 			if (string.IsNullOrWhiteSpace(name) ||
 				string.IsNullOrWhiteSpace(sex) ||
 				string.IsNullOrWhiteSpace(email) ||
 				string.IsNullOrWhiteSpace(password))
 			{
-				MessageBox.Show("Fill-up all fields");
+				MessageBox.Show("Fill-up all fields before registering.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 
-			string filepath = Application.StartupPath + "\\usersdata.txt";
+			// 3. ALTERNATIVE PATH: Saves directly to your Windows Desktop so you can see it instantly!
+			string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+			string filepath = Path.Combine(desktopPath, "usersdata.txt");
 
-			string data = name + ", " + sex + ", " + birthdate + ", " + email + ", " + password;
+			string data = $"{name}, {sex}, {email}, {password}";
 
-			File.AppendAllText(filepath, data + Environment.NewLine);
+			try
+			{
+				// 4. Write to the file
+				File.AppendAllText(filepath, data + Environment.NewLine);
 
-			MessageBox.Show("Registered Successfully!");
-			ClearForm();
+				// 5. Success Message showing exactly where it went
+				MessageBox.Show($"Registered Successfully!\nFile saved to your Desktop:\n{filepath}", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+				// Redirect to Login
+				LogInpage login = new LogInpage();
+				login.Show();
+				this.Hide();
+
+				ClearForm();
+			}
+			catch (Exception ex)
+			{
+				// Tells you exactly if Windows is blocking the file write (e.g., permission issues)
+				MessageBox.Show($"File error: {ex.Message}", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
-
-		private bool isValiEmail(string email)
+		private bool IsValidEmail(string email)
 		{
-			if (string.IsNullOrWhiteSpace(email))
-			{
-				return false;
-			}
+			if (string.IsNullOrWhiteSpace(email)) return false;
 			try
 			{
 				var emailAddress = new MailAddress(email);
@@ -84,37 +88,28 @@ namespace signUpPage
 			{
 				return false;
 			}
-
 		}
 
 		private void emailTextBox_Validating(object sender, CancelEventArgs e)
 		{
-			if (!isValiEmail(emailTextBox.Text))
+			// If the field is totally empty
+			if (string.IsNullOrWhiteSpace(emailTextBox.Text))
 			{
 				errorProvider1.SetError(emailTextBox, "Email is required.");
-				e.Cancel = true;
+				e.Cancel = true; // Blocks the form from submitting
 			}
-			else if (!isValiEmail(emailTextBox.Text))
+			// If they typed something, but it's missing an @ or .com
+			else if (!IsValidEmail(emailTextBox.Text))
 			{
-				errorProvider1.SetError(emailTextBox, "Email is in worng format. Fix it.");
-				e.Cancel = true;
+				errorProvider1.SetError(emailTextBox, "Email is in a wrong format. Fix it.");
+				e.Cancel = true; // Blocks the form from submitting
 			}
+			// If everything is completely fine
 			else
 			{
-				errorProvider1.SetError(emailTextBox, "");
+				errorProvider1.SetError(emailTextBox, ""); // Clears the error icon
 			}
 		}
-
-		//private bool isValidPassword(string password)
-		//{
-		//	if (string.IsNullOrWhiteSpace(password))
-		//		return false;
-
-		//	if (password.Length < 8)
-		//		return false;
-
-		//	return true;
-		//}
 
 		private void passwordTextBox_Validating(object sender, CancelEventArgs e)
 		{
@@ -130,12 +125,8 @@ namespace signUpPage
 			}
 			else
 			{
-				errorProvider1.SetError(passwordTextBox, "");
+				errorProvider1.SetError(passwordTextBox, ""); // Clears error
 			}
-		}
-		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-		{
-			birthdateTextBox.Text = dateTimePicker1.Value.ToShortDateString();
 		}
 
 		private void ClearForm()
@@ -143,7 +134,6 @@ namespace signUpPage
 			nameTextBox.Clear();
 			emailTextBox.Clear();
 			passwordTextBox.Clear();
-			birthdateTextBox.Clear();
 			comboBoxSex.SelectedIndex = -1;
 			checkBoxShowPassword.Checked = false;
 		}
@@ -154,5 +144,6 @@ namespace signUpPage
 			login.Show();
 			this.Hide();
 		}
+
 	}
 }
